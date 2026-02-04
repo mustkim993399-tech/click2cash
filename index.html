@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Click 2 Cash - আয়ের অ্যাপ</title>
@@ -1199,10 +1201,12 @@ document.addEventListener('click', async function(e) {
                 alert('এই টাস্কে কোনো লিংক নেই।');
             }
         } catch (error) {
-            alert('টাস্ক সম্পন্ন করতে সমস্যা হয়েছে।');
-            btn.disabled = false;
-        }
-    }
+            Swal.fire({
+  title: 'সফল!',
+  text: 'পয়েন্ট যোগ হয়েছে।',
+  icon: 'success',
+  timer: 3000,
+  showConfirmButton: false
 });
 
 
@@ -1307,7 +1311,7 @@ document.addEventListener('click', async function(e) {
             
             // Copy to clipboard
             navigator.clipboard.writeText(referralLink).then(function() {
-                alert('রেফারেল লিঙ্ক কপি করা হয়েছে! শেয়ার করুন এবং প্রতিটি রেফারেলের জন্য ৳৫ পান।');
+                alert('রেফারেল লিঙ্ক কপি করা হয়েছে! শেয়ার করুন এবং প্রতিটি রেফারেলের জন্য ৳১২ পান।');
                 addNotification('রেফারেল লিঙ্ক', 'আপনার রেফারেল লিঙ্ক কপি করা হয়েছে। শেয়ার করুন এবং আয় করুন!');
             }, function() {
                 // Fallback for older browsers
